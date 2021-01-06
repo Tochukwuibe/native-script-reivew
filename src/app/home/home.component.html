@@ -4,5 +4,9 @@
 
 <GridLayout>
     <!-- Add your page content here -->
-    <Button text="Tap me!!!" (tap)="onTap($event)"> </Button>
+    <StackLayout>
+        <Image #image stretch="aspectFit"></Image>
+        <Button text="Tap me!!!" (tap)="onTap($event)"> </Button>
+    </StackLayout>
+
 </GridLayout>
