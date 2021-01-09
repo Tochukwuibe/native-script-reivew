@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 // import { Image } from "tns-core-modules/ui/image";
 import { isAvailable, requestCameraPermissions, takePicture } from '@nativescript/camera';
+import { Application } from "@nativescript/core";
 import * as FileSystem from '@nativescript/core/file-system';
+import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 
 
 
@@ -16,8 +18,22 @@ export class HomeComponent implements OnInit {
     capturedImage = null;
     isCaptured = false;
 
+
+    private sideDrawer: RadSideDrawer;
+
     constructor() {
         // Use the component constructor to inject providers.
+    }
+
+
+    ngAfterViewChecked() {
+        this.sideDrawer = <RadSideDrawer>Application.getRootView()
+    }
+
+
+
+    onOpenDrawer() {
+        this.sideDrawer.showDrawer();
     }
 
     ngOnInit(): void {

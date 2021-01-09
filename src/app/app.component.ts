@@ -47,19 +47,23 @@ export class AppComponent {
     }
 
 
-
-    navigateToFeatured(): void {
-        this.routerExtensions.navigate(["/featured"], { clearHistory: true });
+    navigateToCamera(): void {
+        this.routerExtensions.navigate(["/home"], { clearHistory: true });
         this.drawerComponent.sideDrawer.closeDrawer();
     }
 
-    navigateToBrowse(): void {
-        this.routerExtensions.navigate(["/browse"], { clearHistory: true });
+    navigateToFile(): void {
+        this.routerExtensions.navigate(["/file"], { clearHistory: true });
         this.drawerComponent.sideDrawer.closeDrawer();
     }
 
-    navigateToSearch(): void {
-        this.routerExtensions.navigate(["/search"], { clearHistory: true });
+    navigateToPicker(): void {
+        this.routerExtensions.navigate(["/picker"], { clearHistory: true });
+        this.drawerComponent.sideDrawer.closeDrawer();
+    }
+
+    navigateToOrientation(): void {
+        this.routerExtensions.navigate(["/orientation"], { clearHistory: true });
         this.drawerComponent.sideDrawer.closeDrawer();
     }
 }

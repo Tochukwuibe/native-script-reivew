@@ -5,5 +5,8 @@
 
 <GridLayout>
 
+    <Label *ngIf="orientation | async as orien" [text]="orien"></Label>
+    <Button text="Open Drawer" (tap)="onOpenDrawer()"> </Button>
+
 
 </GridLayout>

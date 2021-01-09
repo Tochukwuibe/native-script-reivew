@@ -3,7 +3,7 @@ import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "@nativescript/angular";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/orientation", pathMatch: "full" },
+    { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "home", loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule) },
     { path: "picker", loadChildren: () => import("~/app/image-picker/image-picker.module").then((m) => m.ImagePickerModule) },
     { path: "file", loadChildren: () => import("~/app/file-system/file-system.module").then((m) => m.FileSystemModule) },

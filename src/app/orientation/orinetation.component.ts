@@ -1,7 +1,8 @@
 import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
-import { Application } from "@nativescript/core";
+import { Application, fromObject } from "@nativescript/core";
 import * as FileSystem from '@nativescript/core/file-system';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 
 
@@ -16,13 +17,15 @@ export class OrientationComponent implements OnInit, AfterViewChecked {
 
     private sideDrawer: RadSideDrawer;
 
+    public orientation = new BehaviorSubject(Application.orientation());
 
     constructor() { }
 
     ngOnInit() {
-        
-        Application.on(Application.orientationChangedEvent, (data) => {
-            console.log("Orientation changed ", data)
+
+        Application.on(Application.orientationChangedEvent, ({ newValue }) => {
+            console.log("Orientation changed ", newValue)
+            this.orientation.next(newValue);
         })
     }
 
