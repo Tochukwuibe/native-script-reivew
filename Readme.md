@@ -1,5 +1,7 @@
 # Native Script review sample app
 
+## See review video here: https://youtu.be/ICfukr0tLJo
+
 ## Issues
 
 ### Template
